@@ -3,7 +3,10 @@
 Aplikasi kasir berbasis JavaFX (MVC) dengan database PostgreSQL untuk transaksi pembelian token listrik PLN prabayar.
 Proyek GUI mata kuliah Pemrograman Berorientasi Objek, Universitas Tarumanagara.
 
-**Kelompok:** (isi nama dan NIM anggota)
+**Kelompok:**
+- **B**enz Christian Immanuel (825250104)
+- **S**amuel Lie (825250102)
+- **D**ave Joseph Immanuel Tanuwidjaja (825250150)
 
 ## Fitur
 - Login kasir (password disimpan dengan hash BCrypt)
