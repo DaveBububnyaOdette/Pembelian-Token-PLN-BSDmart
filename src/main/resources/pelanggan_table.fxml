@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="15" stylesheets="@css/style.css" fx:controller="main.java.controller.PelangganTableController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Kelola Data Pelanggan" styleClass="page-title"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="card">
+        <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+        <Label text="ID Pelanggan:"/>
+        <TextField fx:id="idField" promptText="contoh: P003" prefWidth="130"/>
+        <Label text="Nama:"/>
+        <TextField fx:id="namaField" promptText="Nama pelanggan" prefWidth="220"/>
+        <Button text="Tambah" onAction="#handleSubmit" styleClass="button-primary"/>
+        <Button text="Ubah" onAction="#handleUpdate" styleClass="button-secondary"/>
+        <Button text="Hapus" onAction="#handleDelete" styleClass="button-danger"/>
+        <Button text="Bersihkan" onAction="#handleClear" styleClass="button-secondary"/>
+    </HBox>
+
+    <TableView fx:id="pelangganTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID Pelanggan" prefWidth="180">
+                <cellValueFactory><PropertyValueFactory property="idPelanggan"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nama" prefWidth="400">
+                <cellValueFactory><PropertyValueFactory property="nama"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

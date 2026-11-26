@@ -1,0 +1,84 @@
+/* Tema BSDmart: biru #0B4DA2, merah #E31E24, kuning #FFD200 */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f6f9;
+}
+
+.login-container, .card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 10, 0, 0, 4);
+}
+
+.login-brand { -fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #0B4DA2; }
+.page-title { -fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #0B4DA2; }
+.section-title { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #E31E24; }
+.subtle { -fx-text-fill: #6c757d; }
+.total-label { -fx-font-size: 15px; -fx-font-weight: bold; -fx-text-fill: #0B4DA2; }
+.error-text { -fx-text-fill: #E31E24; }
+
+/* Sidebar */
+.sidebar { -fx-background-color: #0B4DA2; }
+.brand { -fx-text-fill: #ffffff; -fx-font-size: 24px; -fx-font-weight: bold; }
+.brand-sub { -fx-text-fill: #FFD200; -fx-font-size: 12px; }
+.user-label { -fx-text-fill: #ffffff; }
+
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 10px 12px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.menu-button:hover { -fx-background-color: #1a63c7; }
+
+.logout-button {
+    -fx-background-color: #E31E24;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.logout-button:hover { -fx-background-color: #c4161c; }
+
+/* Input */
+.text-field, .password-field {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #ced4da;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+    -fx-padding: 7px;
+}
+.text-field:focused, .password-field:focused { -fx-border-color: #0B4DA2; }
+
+/* Tombol */
+.button-primary {
+    -fx-background-color: #0B4DA2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 9px 20px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.button-primary:hover { -fx-background-color: #083a7a; }
+
+.button-secondary {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #333333;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.button-secondary:hover { -fx-background-color: #d0d0d0; }
+
+.button-danger {
+    -fx-background-color: #E31E24;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+.button-danger:hover { -fx-background-color: #c4161c; }

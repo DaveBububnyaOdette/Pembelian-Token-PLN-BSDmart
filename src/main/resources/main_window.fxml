@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" stylesheets="@css/style.css" fx:controller="main.java.controller.DashboardController">
+    <VBox styleClass="sidebar" spacing="12" prefWidth="210" minWidth="210">
+        <padding><Insets top="25" right="15" bottom="20" left="15"/></padding>
+        <Label text="BSDmart" styleClass="brand"/>
+        <Label text="Token Listrik PLN" styleClass="brand-sub"/>
+        <Separator/>
+        <Button text="Transaksi Token PLN" styleClass="menu-button" maxWidth="Infinity" onAction="#showTransaksi"/>
+        <Button text="Kelola Pelanggan" styleClass="menu-button" maxWidth="Infinity" onAction="#showPelanggan"/>
+        <Button text="Kelola Kasir" styleClass="menu-button" maxWidth="Infinity" onAction="#showKasir"/>
+        <Button text="Riwayat Struk" styleClass="menu-button" maxWidth="Infinity" onAction="#showRiwayat"/>
+        <Region VBox.vgrow="ALWAYS"/>
+        <Label fx:id="loggedUser" styleClass="user-label" wrapText="true"/>
+        <Button text="Logout" styleClass="logout-button" maxWidth="Infinity" onAction="#handleLogout"/>
+    </VBox>
+    <TabPane fx:id="mainTabPane" HBox.hgrow="ALWAYS" tabClosingPolicy="ALL_TABS"/>
+</HBox>

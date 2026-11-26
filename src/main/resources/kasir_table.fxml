@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="15" stylesheets="@css/style.css" fx:controller="main.java.controller.KasirTableController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Kelola Data Kasir" styleClass="page-title"/>
+
+    <VBox styleClass="card" spacing="12">
+        <padding><Insets top="15" right="15" bottom="15" left="15"/></padding>
+        <GridPane hgap="10" vgap="12">
+            <Label text="ID Kasir:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="idField" promptText="contoh: K003" prefWidth="200" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Label text="Nama:" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="namaField" promptText="Nama kasir" prefWidth="220" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+
+            <Label text="Username:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="usernameField" promptText="Username untuk login" prefWidth="200" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Label text="Password:" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+            <PasswordField fx:id="passwordField" promptText="Minimal 6 karakter" prefWidth="220" GridPane.rowIndex="1" GridPane.columnIndex="3"/>
+        </GridPane>
+        <HBox spacing="10">
+            <Button text="Tambah" onAction="#handleSubmit" styleClass="button-primary"/>
+            <Button text="Ubah" onAction="#handleUpdate" styleClass="button-secondary"/>
+            <Button text="Hapus" onAction="#handleDelete" styleClass="button-danger"/>
+            <Button text="Bersihkan" onAction="#handleClear" styleClass="button-secondary"/>
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="kasirTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="ID Kasir" prefWidth="150">
+                <cellValueFactory><PropertyValueFactory property="idKasir"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Nama" prefWidth="300">
+                <cellValueFactory><PropertyValueFactory property="nama"/></cellValueFactory>
+            </TableColumn>
+            <TableColumn text="Username" prefWidth="250">
+                <cellValueFactory><PropertyValueFactory property="username"/></cellValueFactory>
+            </TableColumn>
+        </columns>
+    </TableView>
+</VBox>

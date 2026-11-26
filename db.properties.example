@@ -1,0 +1,5 @@
+# Salin file ini menjadi "db.properties" (di folder project yang sama), lalu isi sesuai PostgreSQL di komputermu.
+# File db.properties TIDAK ikut ke GitHub (lihat .gitignore).
+db.url=jdbc:postgresql://localhost:5432/db_bsdmart_pln
+db.user=postgres
+db.password=ISI_PASSWORD_POSTGRES_KAMU

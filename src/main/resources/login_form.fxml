@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" stylesheets="@css/style.css" fx:controller="main.java.controller.LoginController">
+    <GridPane alignment="CENTER" hgap="10" vgap="15" styleClass="login-container" maxWidth="380" maxHeight="320">
+        <padding><Insets top="30" right="30" bottom="30" left="30"/></padding>
+
+        <Label text="BSDmart" styleClass="login-brand" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+        <Label text="Login Kasir - Token Listrik PLN" styleClass="subtle" GridPane.rowIndex="1" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+
+        <Label text="Username:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="usernameField" promptText="Masukkan username" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Password:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <PasswordField fx:id="passwordField" promptText="Masukkan password" onAction="#handleLogin" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Button text="Masuk" onAction="#handleLogin" styleClass="button-primary" maxWidth="Infinity" GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+        <Label fx:id="errorLabel" styleClass="error-text" wrapText="true" GridPane.rowIndex="5" GridPane.columnSpan="2" GridPane.halignment="CENTER"/>
+    </GridPane>
+</StackPane>

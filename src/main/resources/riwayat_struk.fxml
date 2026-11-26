@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" spacing="15" stylesheets="@css/style.css" fx:controller="main.java.controller.RiwayatStrukController">
+    <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+    <Label text="Riwayat Struk Transaksi" styleClass="page-title"/>
+
+    <HBox spacing="10">
+        <Button text="Muat Ulang" onAction="#handleRefresh" styleClass="button-secondary"/>
+        <Button text="Lihat Struk" onAction="#handleLihatStruk" styleClass="button-primary"/>
+        <Button text="Hapus" onAction="#handleDelete" styleClass="button-danger"/>
+    </HBox>
+
+    <TableView fx:id="strukTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn text="No. Transaksi" prefWidth="170"><cellValueFactory><PropertyValueFactory property="noTrx"/></cellValueFactory></TableColumn>
+            <TableColumn text="Tanggal" prefWidth="95"><cellValueFactory><PropertyValueFactory property="tanggal"/></cellValueFactory></TableColumn>
+            <TableColumn text="Waktu" prefWidth="80"><cellValueFactory><PropertyValueFactory property="waktu"/></cellValueFactory></TableColumn>
+            <TableColumn text="Kasir" prefWidth="120"><cellValueFactory><PropertyValueFactory property="namaKasir"/></cellValueFactory></TableColumn>
+            <TableColumn text="Pelanggan" prefWidth="130"><cellValueFactory><PropertyValueFactory property="namaPelanggan"/></cellValueFactory></TableColumn>
+            <TableColumn text="Metode" prefWidth="80"><cellValueFactory><PropertyValueFactory property="jenisPembayaran"/></cellValueFactory></TableColumn>
+            <TableColumn fx:id="colTotal" text="Total Bayar" prefWidth="120"><cellValueFactory><PropertyValueFactory property="totalBayar"/></cellValueFactory></TableColumn>
+        </columns>
+    </TableView>
+</VBox>

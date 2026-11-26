@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fitToWidth="true" stylesheets="@css/style.css" fx:controller="main.java.controller.TransaksiController">
+    <VBox spacing="15">
+        <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+        <Label text="Pembelian Token Listrik PLN Prabayar" styleClass="page-title"/>
+        <Label fx:id="lblKasir" styleClass="subtle"/>
+
+        <HBox spacing="20">
+            <!-- KIRI: data pelanggan & meter -->
+            <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+                <Label text="Data Pelanggan dan Meter PLN" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="12">
+                    <Label text="Pelanggan:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <HBox spacing="6" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                        <ComboBox fx:id="pelangganCombo" promptText="Pilih pelanggan" prefWidth="220"/>
+                        <Button text="Muat ulang" onAction="#handleRefreshPelanggan" styleClass="button-secondary"/>
+                    </HBox>
+
+                    <Label text="No. Meter:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="noMeterField" promptText="11-12 digit" prefWidth="220" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="ID Pelanggan PLN:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="idPelField" promptText="contoh: 512345678901" prefWidth="220" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Nama (di PLN):" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="namaPlnField" promptText="Nama pemilik meter" prefWidth="220" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Tarif / Daya:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="tarifCombo" promptText="Pilih tarif/daya" prefWidth="220" onAction="#handleHitung" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </GridPane>
+            </VBox>
+
+            <!-- KANAN: nominal & pembayaran -->
+            <VBox styleClass="card" spacing="12" HBox.hgrow="ALWAYS">
+                <padding><Insets top="18" right="18" bottom="18" left="18"/></padding>
+                <Label text="Nominal dan Pembayaran" styleClass="section-title"/>
+                <GridPane hgap="10" vgap="12">
+                    <Label text="Nominal Token (Rp):" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="nominalCombo" promptText="Pilih nominal" prefWidth="200" onAction="#handleHitung" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Biaya Admin:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblAdmin" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Jumlah kWh:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblKwh" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="TOTAL BAYAR:" styleClass="total-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <Label fx:id="lblTotal" styleClass="total-label" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Metode Pembayaran:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="metodeCombo" prefWidth="200" onAction="#handleMetode" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <VBox fx:id="dynamicBayarContainer" spacing="10"/>
+
+                <HBox spacing="10">
+                    <Button text="BAYAR" onAction="#handleBayar" styleClass="button-primary"/>
+                    <Button text="Reset" onAction="#handleReset" styleClass="button-secondary"/>
+                </HBox>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>
